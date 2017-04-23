@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CentralFit</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+  <div class="container noprint">
+      <div class="row spance-row">
+  		    <div class="col-sm-12">
+  		 	    <h2>AVALIAÇÃO FÍSICA E BIOMÉTRICA</h2>
+  		    </div>
+      </div>
+      <div class="row titulos">
+        <div class="col-sm-12">
+            <h3>DADOS DO ALUNO</h3>
+        </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-5 form-group">  			    
+            <label for="InputName">Nome do aluno</label>
+            <input type="text" class="form-control" id="PtNome" placeholder="Nome do aluno">
+          </div> 
+          <div class="col-sm-3 form-group">
+            <label for="InputName">Danta de Nascimento</label>
+            <input type="date" class="form-control" id="PtData" placeholder="" >
+          </div>
+          <div class="col-sm-4 form-group">
+            <label for="InputName">Profissão</label>
+            <input type="text" class="form-control" id="PtProfetion" placeholder="Profissão">
+          </div>    
+      </div>
+
+      <div class="row">
+          <div class="col-sm-2 form-group">
+            <label for="InputName">Prat. At. Física?</label>
+            <select class="form-control" id="PraticaEdu" onchange="FuncPE()">
+              <option>- -</option>
+              <option value="true">Sim</option>
+              <option value="false">Não</option>
+            </select>
+          </div>
+          <div class="col-sm-2 form-group" >
+            <div id="qualAt" style="display:none">
+              <label for="InputName2">Qual?</label>
+              <input type="text" class="form-control" id="PtQAt" placeholder="Informar atividade" > 
+            </div>
+          </div>
+          <div class="col-sm-2 form-group">
+            <label for="InputName">Fumante?</label>
+            <select class="form-control" id="fumante" onchange="FuncFuma()">
+              <option>- -</option>
+              <option value="true">Sim</option>
+              <option value="false">Não</option>
+            </select>
+          </div>
+          <div class="col-sm-2 form-group">
+            <div id="quantCigarro" style="display:none">
+              <label for="InputName">Cigarros por dia:</label>
+              <select class="form-control">
+                <option>- -</option>
+                <option>Até 2</option>
+                <option>Entre 3 e 5</option>
+                <option>Entre 5 e 8</option>
+                <option>Mais que 9</option>              
+              </select>
+            </div>
+          </div>
+          <div class="col-sm-2 form-group">
+            <label for="InputName">Bebe?</label>
+            <select class="form-control">
+              <option>- -</option>
+              <option>Casualmente</option>
+              <option>Socialmente</option>
+              <option>Raramente</option>
+              <option>Não bebo</option>              
+            </select>
+          </div>
+          <div class="col-sm-2 form-group">
+            <label for="InputName">Sono/hs:</label>
+            <select class="form-control">
+              <option>- -</option>
+              <option>Entre 2 e 4h</option>
+              <option>Entre 4 e 6h</option>
+              <option>Entre 6 e 8h</option>
+              <option>Mais que 8h</option>              
+            </select>
+          </div>
+      </div>
+    
+      <div class="row">
+          <div class="col-sm-4 form-group">
+            <label for="InputName">Refeições</label>
+            <select class="form-control">
+              <option>- -</option>
+              <option>2 por dia</option>
+              <option>3 por dia</option>
+              <option>4 por dia</option>
+              <option>5 por dia</option>              
+              <option>6 por dia</option>              
+            </select>
+          </div>
+          <div class="col-sm-4 form-group">
+            <label for="InputName">Objetivos</label>
+            <select class="form-control">
+              <option>- -</option>
+              <option>Hipertrofia</option>
+              <option>Condicionamento físico</option>
+              <option>Emagrecer</option>
+              <option>Saúde</option>              
+              <option>Tratamento</option>
+              <option>TAF</option>  
+              <option>Definição</option>             
+            </select>
+          </div>
+          <div class="col-sm-2 form-group">
+            <label for="InputName">Nível</label>
+            <select class="form-control">
+              <option>- -</option>
+              <option>Iniciante</option>
+              <option>Intermediário</option>
+              <option>Avançado</option>            
+            </select>
+          </div>
+          <div class="col-sm-2 form-group">
+            <label for="InputName2">Idade</label>
+            <input type="text" class="form-control" id="PrintIdade" placeholder="Idade">
+          </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2">
+          <label for="InputName">Dieta?</label>
+            <select class="form-control" id="dieta" onchange="FuncDieta()">
+              <option>- -</option>
+              <option value="true">Sim</option>
+              <option value="false">Não</option>
+            </select>
+        </div>
+        <div class="col-sm-4">
+          <div id="fazDieta" style="display:none">
+              <label for="InputName2">Qual?</label>
+              <input type="text" class="form-control" id="InputName2" placeholder="Qual dieta?">
+          </div>
+        </div>
+        <div class="col-sm-2">
+          <label for="InputName">Medicamento?</label>
+            <select class="form-control" id="medicamento" onchange="FuncMedic()">
+              <option>- -</option>
+              <option value="true">Sim</option>
+              <option value="false">Não</option>
+            </select>
+        </div>
+        <div class="col-sm-4">
+          <div id="usaMedic" style="display:none">
+              <label for="InputName2">Qual?</label>
+              <input type="text" class="form-control" id="InputName2" placeholder="Qual medicamento?">
+          </div>
+        </div>
+      </div>
+
+      <div class="row spance-row">
+          <div class="col-sm-2">
+            <label for="InputName">Fratura?</label>
+              <select class="form-control" id="fratura" onchange="FuncFrat()">
+                <option>- -</option>
+                <option value="true">Sim</option>
+                <option value="false">Não</option>
+              </select>
+          </div>
+          <div class="col-sm-4">
+            <div id="fraturado" style="display:none">
+                <label for="InputName2">Qual fratura?</label>
+                <input type="text" class="form-control" id="InputName2" placeholder="Qual fratura?">
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <label for="InputName">Alérgico?</label>
+              <select class="form-control" id="alergia" onchange="FuncAlerg()">
+                <option>- -</option>
+                <option value="true">Sim</option>
+                <option value="false">Não</option>
+              </select>
+          </div>
+          <div class="col-sm-4">
+            <div id="alergico" style="display:none">
+                <label for="InputName2">A quê?</label>
+                <input type="text" class="form-control" id="InputName2" placeholder="A quê?">
+            </div>
+          </div>
+      </div>
+
+      <div class="row spance-row">
+          <div class="col-sm-2">
+            <label for="InputName">Cirurgia?</label>
+              <select class="form-control" id="cirurgia" onchange="FuncCirg()">
+                <option>- -</option>
+                <option value="true">Sim</option>
+                <option value="false">Não</option>
+              </select>
+          </div>
+          <div class="col-sm-4">
+            <div id="entFaca" style="display:none">
+                <label for="InputName2">Onde?</label>
+                <input type="text" class="form-control" id="InputName2" placeholder="Onde?">
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <label for="InputName">Varizes?</label>
+              <select class="form-control" id="varizes" onchange="FuncVari()">
+                <option>- -</option>
+                <option value="true">Sim</option>
+                <option value="false">Não</option>
+              </select>
+          </div>
+          <div class="col-sm-4">
+            <div id="variceu" style="display:none">
+                <label for="InputName2">A quê?</label>
+                <input type="text" class="form-control" id="InputName2" placeholder="A quê?">
+            </div>
+          </div>
+      </div>
+
+      <div class="row spance-row">
+         <div class="col-sm-2">
+            <label for="InputName">Doenças?</label>
+              <select class="form-control" id="doenca" onchange="FuncDoen()">
+                <option>- -</option>
+                <option value="true">Sim</option>
+                <option value="false">Não</option>
+              </select>
+          </div>
+          <div class="col-sm-4">
+            <div id="fudido" style="display:none">
+                <label for="InputName2">Qual?</label>
+                <input type="text" class="form-control" id="InputName2" placeholder="Qual?">
+            </div>
+          </div>
+        <div class="col-sm-6"> 
+            <label for="InputName2">Antecedente médico familiar:</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Antecedente...">
+        </div>
+      </div>
+
+       <div class="row spance-row">
+          <div class="col-sm-12">
+            <label for="InputName2">Obs.:</label>
+            <textarea class="form-control" rows="3"></textarea>
+          </div>
+      </div>
+
+      <div class="row titulos">
+        <div class="col-sm-12">
+            <h3>ANALISE HEMODINÃMICA</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Hora</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Hora">
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Pressão Arterial (mmHg)</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Pressão">
+        </div>
+        <div class="col-sm-4 form-group">
+            <label for="InputName2">Frequência Cardíaca de Repouso</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Frenquência"> 
+        </div>
+      </div>
+
+      <div class="row titulos">
+        <div class="col-sm-12">
+            <h3>PERIMETRIA</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Ombro</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Ombro"> 
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Torax Normal</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Normal"> 
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Torax Insp.</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Insp."> 
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Torax Exp.</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Exp."> 
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Cintura</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Cintura"> 
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Abdômen</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Abdômen"> 
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Quadril</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Quadril"> 
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Braço D/R</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Braço D/R"> 
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Braço D/C</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Braço D/C"> 
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Braço E/R</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Braço E/R"> 
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Braço E/C</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Braço E/C"> 
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Antebraço Direito</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Antebraço Direito"> 
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Antebraço Esquerdo</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Antebraço Esquerdo"> 
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Coxa Direita</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Coxa Direita"> 
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Coxa Esquerda</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Coxa Esquerda"> 
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Perna Direita</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Perna Direita"> 
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Perna Esquerda</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Perna Esquerda"> 
+        </div>
+      </div>
+
+      <div class="row titulos">
+        <div class="col-sm-12">
+            <h3>COMPOSIÇÃO CORPORAL / ANALISE ANTROPOMÉTRICA</h3>
+        </div>
+      </div>
+    
+      <div class="row">
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Peito</label>
+            <input type="text" class="form-control" id="VrPeito" placeholder="Peito"> 
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Abdômen</label>
+            <input type="text" class="form-control" id="VrAbdomen" placeholder="Abdômen"> 
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Supraíliaca</label>
+            <input type="text" class="form-control" id="VrSuprailiaca" placeholder="Supraíliaca"> 
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Coxa</label>
+            <input type="text" class="form-control" id="VrCoxa" placeholder="Coxa"> 
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Subescapular</label>
+            <input type="text" class="form-control" id="VrSubescapular" placeholder="Subescapular"> 
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Tríceps</label>
+            <input type="text" class="form-control" id="VrTriceps" placeholder="Tríceps"> 
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Axilar</label>
+            <input type="text" class="form-control" id="VrAxilar" placeholder="Axilar"> 
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Idade</label>
+            <input type="text" class="form-control" id="VLIdade" placeholder="Idade">
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Peso (Kg.)</label>
+            <input type="text" class="form-control" id="VrPeso" placeholder="Peso">
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Altura (m.)</label>
+            <input type="text" class="form-control" id="VrAltura" placeholder="Altura">  
+        </div>
+        <div class="col-sm-2">
+            <label for="InputName">Sexo</label>
+            <select class="form-control" id="sexo">
+              <option>- -</option>
+              <option value="true">Masculino</option>
+              <option value="false">Feminino</option>
+            </select>
+        </div>
+      </div>
+      
+      <div class="row">
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">IMC</label>
+            <div id="IMCall" class="resultados"></div>
+        </div>
+        <div class="col-sm-3 form-group">
+            <label for="InputName2">Status</label>
+            <div id="StatusIMC" class="resultados"></div>
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">Peso Ideal (Kg.)</label>
+            <div id="PesoIdeal" class="resultados"></div>
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2">% de Gorudura</label>
+            <div id="PercGord" class="resultados"></div>
+        </div>
+        <div class="col-sm-2 form-group">
+            <label for="InputName2" class="branco">. </label>
+            <div><button class="btn btn-default" type="submit" onclick="CalcIMC(),PesoIdealFunc(),PercentGordura()">Calcular</button></div>
+        </div>
+      </div>
+
+      <div class="row titulos">
+        <div class="col-sm-12">
+            <h3>INDICATIVO POSTURAL</h3>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3 form-group">
+            <label for="InputName2">Cabeça</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Cabeça"> 
+        </div>
+        <div class="col-sm-3 form-group">
+            <label for="InputName2">Ombros</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Ombros"> 
+        </div>
+        <div class="col-sm-3 form-group">
+            <label for="InputName2">Cotovelos</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Cotovelos"> 
+        </div>
+        <div class="col-sm-3 form-group">
+            <label for="InputName2">Quadril</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Quadril"> 
+        </div>
+      </div>
+
+       <div class="row">
+        <div class="col-sm-3 form-group">
+            <label for="InputName2">Joelhos</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Joelhos"> 
+        </div>
+        <div class="col-sm-3 form-group">
+            <label for="InputName2">Pés</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Pés"> 
+        </div>
+        <div class="col-sm-3 form-group">
+            <label for="InputName2">Coluna Vertebral</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Coluna Vertebral"> 
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-3 form-group">
+            <label for="InputName2">Teste Abdominal - Quntidade</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Quantidade"> 
+        </div>
+        <div class="col-sm-3 form-group">
+            <label for="InputName2">Teste Abdominal - Resultado</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Resultado"> 
+        </div>
+        <div class="col-sm-3 form-group">
+            <label for="InputName2">Observações</label>
+            <input type="text" class="form-control" id="InputName2" placeholder="Resultado"> 
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-sm-12">
+            <label for="InputName2">Observações do Avaliador:</label>
+            <textarea class="form-control" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="row titulos">
+        <div class="col-sm-12">
+            <button type="button" class="btn btn-primary" onclick="imprime()"> <span class="glyphicon glyphicon-print"> </span> Gerar Impressão</button>
+        </div>
+      </div>
+  </div>
+
+
+<div class="container report-print">
+  <div class="row linerow">
+    <div class="col-sm-12">
+      <h1 id="RtNome"></h1>
+    </div>
+  </div>
+  <div class="row linerow">
+    <div class="col-sm-2">
+      <span><b>Data de Nascimento</b></span><p id="RtData"></p>
+    </div>
+    <div class="col-sm-2">
+      <span><b>Profissão</b></span><p id="RtProfetion"></p>
+    </div>
+    <div class="col-sm-2">
+      <span><b>Atividade Fisica</b></span><p id="RtResultProf"></p>
+    </div>
+  </div>
+</div>
+
+   
+
+    <script src="js/processa.js"></script>
+    <script src="js/percentual-gordura.js"></script>
+	  <script src="js/print.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
+</html>

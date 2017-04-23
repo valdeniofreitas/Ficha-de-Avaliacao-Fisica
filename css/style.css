@@ -1,0 +1,43 @@
+.spance-row {
+	margin-top: 12px;
+}
+h2 {
+	text-align: center;
+	color: #696969;
+}
+h3 {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #696969;
+}
+.titulos {
+	background: #F0F0F2;
+	text-align: center;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	padding: 15px;
+}
+.resultados {
+	font-size: 15px;
+	padding-top: 7px;
+	font-weight: bold;
+	color: #4682B4;
+}
+.branco {
+	color: white;
+}
+.report-print span {
+	text-transform: uppercase;
+	font-size: 9px;
+}
+.linerow {
+	border-bottom: 1px solid #ccc;
+}
+.linerow div {
+	float: left;
+}
+@media print {
+	.noprint {
+		display: none;
+	}
+}
